@@ -29,6 +29,7 @@
 - ufi：机器访问接口，人直接敲命令。
 - API：应用程序访问数据库。
 - 物理层 访问原语 不可再分
+- 物理层下面就是OS OS下面是disk
 
 
 ### DBMS 的process structure
