@@ -42,6 +42,7 @@
   - 交互：双向通信，两个pipe（单机，双向）/ socket（网络）。
 - multi thread structure：
   - 只有一个DBMS process，process里面有一个daemon线程，用来监听。比 multi-process 更省资源，可以服务更多的 application。
+  - catalog locktable buffer
   - 听到一个SQL请求，daemon就生成一个新的DBMS core thread，与对应的application process进行交互。
   - 交互方式：pipe（本机）/ socket（不在本机）。
   - daemon：有点像 cn 的 TCP 连接。
