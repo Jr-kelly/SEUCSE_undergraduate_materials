@@ -81,7 +81,7 @@ application的需求分类：
 - 邮件、telnet、网页、文件都是TCP；
 - YouTube、网络电话有可能是UDP。
 
-TCP的安全增强：SSL，secure socket layer。
+TCP的安全增强：SSL，secure socket layer。在TCP和应用层之间，HTTPS支持
 
 ==问题：需要提供安全的应用层服务，通过什么来实现？应用层自己增加安全性，或者SSL。==
 
@@ -157,7 +157,7 @@ HTTP是无状态协议，服务器端不保留之前请求的状态信息。
 
 #### 非持久连接 & 持久连接
 
-非持久连接：（非持续性连接）
+非持久连接：（非持续性连接） non-persistent connection
 
 - HTTP1.0，传一个对象需要三次TCP握手，然后传对象，响应，接着就关闭连接。传一个对象，就需要走一次这个过程。
 - 获取每个对象需要两阶段：建立TCP连接、对象请求和传输。每次连接需要经历“TCP慢启动阶段”。
@@ -187,8 +187,9 @@ HTTP是无状态协议，服务器端不保留之前请求的状态信息。
     - 方法：对【所请求的对象】的操作，也就是命令。
     - GET：请求读取。
     - POST：添加信息（如注释）
-    - PUT：（1.1）上传文件。
-    - HEAD（1.0），DELETE（1.1）。
+    - PUT：（1.1）上传文件。要求服务器创建或更新资源
+    - HEAD（1.0）
+    - DELETE（1.1） 请求服务器删除指定资源
   - 在响应报文中：也被叫做状态行，status line。
   - 版本+状态码+短语+CRLF。
     - 状态码：200 ok，301 moved permanently（资源永久性移动到别的地方了，会给出新url），400 bad request（server看不懂的request），404 not found，505 HTTP版本不支持。
@@ -227,7 +228,7 @@ cache通常由ISP来部署（大学、公司、residential ISP），其实也可
 节省带宽，减少响应时间。
 
 conditional GET：
-
+询问服务器我的数据是不是最新的，如果是最新的，就没必要重新从服务器获取资源了
 - 在HTTP request msg中，If-modified-since:\<date>。
 - 未修改：返回状态是304（Not Modified）。
 - 修改过：正常，200。
