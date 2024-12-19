@@ -2,6 +2,9 @@
 
 link layer：负责把报文从一个节点、通过链路、传送到物理相邻的下一个节点，链路层寻址不考虑网络层地址。 wired links/wireless links/LANs
 
+-LLC：成帧，差错控制，流量控制
+-MAC：多路访问协议
+
 - 理解链路层服务的原理；
   - 错误检测，纠正。
   - 共享广播信道：多路访问。
@@ -98,7 +101,7 @@ cyclic redundancy check，循环冗余校验和：
     - 退避时间计算：信号在媒体上的往返时间乘以随机数(r)，(r)的取值范围依赖于冲突的次数(i)，0 ≤ r＜2^i。
   - ![image-20220102091659564](.\..\..\typora-user-images\image-20220102091659564.png)
   - 使用CSMA/CD的以太网不能进行全双工通信而只能半双工：全双工两条信道，不可能产生冲突
-- CSMA/CA（冲突避免），used in 802.11。
+- CSMA/CA（冲突避免），used in 802.11(wifi)
 
 ### taking turns
 
