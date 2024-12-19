@@ -59,6 +59,9 @@ cyclic redundancy check，循环冗余校验和：
 ## multiple access protocols
 
 如何协调多个 sender/receiver node，实验一个共享广播信道：多路访问链路协议。
+--点对点信道
+--广播信道
+正因为广播信道的存在才需要一系列的多路访问协议
 
 ### channel partitioning
 
