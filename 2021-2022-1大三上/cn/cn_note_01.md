@@ -155,7 +155,7 @@ packet：分组，源end system将长报文划分为小数据块。
 
 这里可能会出计算题，见ppt例题。
 
-工具：tracert（windows）traceroute（linux）可以用来测网络时延。
+工具：tracert（windows）traceroute（linux）可以用来测网络时延。网络诊断工具，用于确定从源设备到目标设备之间经过的路由路径，并测每一跳(hop)的延迟实践。功能基本相同，用法和具体实现略有差异。
 
 ### 网络性能指标
 
