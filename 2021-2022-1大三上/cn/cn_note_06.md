@@ -1,6 +1,6 @@
 # cn 06 the link layer and LANs
 
-link layer：负责把报文从一个节点、通过链路、传送到物理相邻的下一个节点，链路层寻址不考虑网络层地址。
+link layer：负责把报文从一个节点、通过链路、传送到物理相邻的下一个节点，链路层寻址不考虑网络层地址。 wired links/wireless links/LANs
 
 - 理解链路层服务的原理；
   - 错误检测，纠正。
