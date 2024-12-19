@@ -125,6 +125,10 @@ cyclic redundancy check，循环冗余校验和：
 
 物理相连的主机通信，不需要IP地址，只需要MAC地址。
 
+MAC控制器：
+- 要实现MAC和LLC的功能
+- 收到IP数据包后，打包成64B~1518B的帧
+
 MAC：
 
 - 48bit，如 1A-2F-BB-76-09-AD。
@@ -134,6 +138,8 @@ MAC：
 ### ARP
 
 Address Resolution Protocol。
+
+介于网络层和数据链路层之间 即插即用
 
 每一个IP节点都有一个 ARP table：
 
@@ -182,6 +188,7 @@ ARP：
 Ethernet拓扑：
 
 - bus（会有碰撞）。
+- ring
 - star：hub，集线器，物理层设备，作用于bit。后来被交换机switch替代，交换机是无碰撞的。
 - 现在流行的是star，如果要嗅探别人的包，需要交换机的权限。
 
@@ -204,6 +211,8 @@ Ethernet’s MAC protocol: unslotted CSMA/CD with binary backoff，存在冲突�
 看这个视频，讲的蛮好的：https://www.bilibili.com/video/BV12E411B7gm
 
 即插即用 plug-and-play，自学习 self-learning，交换机不需要配置。
+
+维护MAC地址+接口
 
 switch的接口没有MAC地址。
 
@@ -236,7 +245,9 @@ switch的接口没有MAC地址。
   - routers：使用路由算法根据IP地址进行转发；
   - switches：使用洪泛、自学习、根据MAC地址进行转发。
 
-VLAN：控制广播域。广播域是广播帧能够到达的范围，缺省情况下，交换机所有端口同属于一个广播域，无法互相隔离，会产生广播风暴。
+二层交换机解决了冲突域collision domain，还存在广播域问题
+
+VLAN：控制广播域(broadcast domain)。广播域是广播帧能够到达的范围，缺省情况下，交换机所有端口同属于一个广播域，无法互相隔离，会产生广播风暴。
 
 ## 综合实例
 
