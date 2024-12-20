@@ -3,6 +3,7 @@
 link layer：负责把报文从一个节点、通过链路、传送到物理相邻的下一个节点，链路层寻址不考虑网络层地址。 wired links/wireless links/LANs
 
 -LLC：成帧，差错控制，流量控制
+
 -MAC：多路访问协议
 
 - 理解链路层服务的原理；
