@@ -232,14 +232,20 @@ ppt上有一些地址分配的例题。
 
 Dynamic Host Configuration Protocol。是应用层协议。
 
+- 全程广播，因为不知道IP
+- UDP，因为都不知道IP怎么建立连接
+- DHCP分配得到的IP地址是临时的（租用期）
+
 工作过程：
 
 - DHCP 客户 从UDP端口68 以【广播】形式 向服务器发送发现报文（DHCP DISCOVER）；（广播：不知道哪个host是DHCP服务器；UDP：不能TCP，因为一不知道 DHCP server 的IP地址，二自己有没有IP地址。）
 - DHCP 服务器【单播或广播】发出提供报文（DHCP OFFER）；
 - DHCP 客户从多个 DHCP 服务器中选择一个，并向其以【广播】形式发送 DHCP 请求报文（DHCP REQUEST）；
-- 被选择的 DHCP 服务器【单播】发送确认报文（DHCP ACK），包括IP地址、缺省路由器IP地址（第一跳路由器地址，默认网关）、DNS服务器域名+IP地址、网络掩码。
+- 被选择的 DHCP 服务器【广播】发送确认报文（DHCP ACK），包括IP地址、缺省路由器IP地址（第一跳路由器地址，默认网关）、DNS服务器域名+IP地址、网络掩码。
 
 ![image-20211207101851883](.\..\..\typora-user-images\image-20211207101851883.png)
+
+
 
 MAC地址：用来确认网络设备位置的位址，可以唯一标示一个网卡。在OSI模型中，第三层网络层负责IP地址，第二层数据链路层则负责MAC位址。
 
