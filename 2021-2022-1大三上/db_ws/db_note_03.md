@@ -278,6 +278,12 @@ GROUP BY	grouping-list
 HAVING		group-qualification
 ```
 
+逻辑是这样的：
+- 先按GROUP BY作分组
+- 删除不满足HAVING条件的分组
+- 在每个分组上执行SELECT
+- 每个分组有且仅有一个结果
+
 比如，查询【每个年龄的平均rating】：
 
 ```sql
