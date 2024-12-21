@@ -278,6 +278,14 @@ GROUP BY	grouping-list
 HAVING		group-qualification
 ```
 
+```sql
+SELECT S.rating, MIN(S.age) AS minage
+FROM Sailors S
+WHERE S.age >= 18
+GROUP BY S.rating
+Having COUNT(*) > 1 AND EVERY(S.age) <= 60
+```
+
 逻辑是这样的：
 - WHERE筛选
 - 按GROUP BY作分组
