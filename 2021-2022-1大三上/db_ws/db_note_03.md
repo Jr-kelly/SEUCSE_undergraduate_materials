@@ -250,6 +250,13 @@ WHERE S.rating=10;
 
 好奇【年龄最大的水手】的名字和年龄，`SELECT S.sname, MAX(S.age) FROM Sailors S`，这样写是illegal的（一边是列，一边是列的max值）。
 
+```sql
+SELECT S.sname
+FROM Sailors S
+WHERE S.rating = (SELECT MAX(S2.rating)
+		  FROM Sailors S2)
+```
+
 以下的写法是错的，因为aggregate operation不能嵌套使用，也就是不能`MIN(AVG(S2.age))`：
 
 ```sql
