@@ -201,6 +201,8 @@ BGP session：两个不同 AS 的 gateway router，通过179端口的TCP半连�
 
 ## ICMP: Internet Control Message Protocol
 
+网络层协议  ICMP差错报告报文 + ICMP询问报文
+
 被封装在IP数据报里。（看起来和TCP UDP同一层）
 
 格式：类型字段+编码字段。
@@ -222,6 +224,7 @@ TTL：
 
 ### 应用实例：linux 的 traceroute、windows 的 tracert
 
+- 使用了ICMP时间超过报文
 - 追踪路由。知道路径和时间。
 - 一条路径上，每个设备Traceroute要测3次。
 - 源主机发送不可达的 UDP 报文到目的地，先设置 TTL=1，然后 TTL=2，…
@@ -230,6 +233,7 @@ TTL：
 
 ### 应用实例：Ping
 
+- 使用了ICMP回送请求和回答报文
 - 发送 ICMP 回显请求报文（type 8 code 0），测试一台主机是否可达。只保证，当前主机与目的主机间，存在一条连通的物理路径。
 - 测试连通性可以用PING命令。（甚至可以判断对方操作系统的类型，通过TTL。WINDOWS 95/98：32，UNIX：255，LINUX：64，WIN7/10：64）
 - Ping不通：超时，某些端口不让ping，NAT会导致单向ping通，ICMP包被某些节点过滤，网线刚插到交换机上就Ping通网关（没懂）。
