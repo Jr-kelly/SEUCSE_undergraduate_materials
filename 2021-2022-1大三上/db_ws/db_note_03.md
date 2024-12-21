@@ -279,10 +279,13 @@ HAVING		group-qualification
 ```
 
 逻辑是这样的：
-- 先按GROUP BY作分组
+- WHERE筛选
+- 按GROUP BY作分组
 - 删除不满足HAVING条件的分组
 - 在每个分组上执行SELECT
 - 每个分组有且仅有一个结果
+
+SELECT和HAVING的属性要是GROUP BY的子集，这样才能确保一个分组一个结果 
 
 比如，查询【每个年龄的平均rating】：
 
