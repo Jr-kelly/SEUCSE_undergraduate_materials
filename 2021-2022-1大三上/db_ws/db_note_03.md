@@ -251,9 +251,9 @@ WHERE S.rating=10;
 好奇【年龄最大的水手】的名字和年龄，`SELECT S.sname, MAX(S.age) FROM Sailors S`，这样写是illegal的（一边是列，一边是列的max值）。
 
 ```sql
-SELECT S.sname
+SELECT S.sname, S.age
 FROM Sailors S
-WHERE S.rating = (SELECT MAX(S2.rating)
+WHERE S.age = (SELECT MAX(S2.age)
 		  FROM Sailors S2)
 ```
 
